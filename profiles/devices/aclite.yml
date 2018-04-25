@@ -1,0 +1,23 @@
+conf_to_build: aclite
+target: "ar71xx"
+device: "ubnt-unifiac-lite"
+package_id: mips_24kc
+image_name: generic
+extension: bin
+
+mesh_channel: 36
+
+private_channel: 6
+private_5g_channel: 36
+
+babeld_interfaces:
+  - eth0
+
+gateway_interfaces:
+  - "{%if wifi_mesh %}wlan1{%endif%}"
+
+wifi_mesh: false
+
+rust_targets:
+  - mips-unknown-linux-gnu
+  - mips-unknown-linux-musl
