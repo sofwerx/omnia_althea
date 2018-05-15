@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+
+  althea-firmware:
+    build:
+      context: .
+      args:
+        DEVICE: omnia.yml
+        PROFILE: althea-dev.yml 
+    image: local/althea-firmware
+    hostname: althea-firmware
+    container_name: althea-firmware
+ 
