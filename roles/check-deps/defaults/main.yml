@@ -8,8 +8,7 @@ known_distros:
   - Arch Linux
 
 debian_deps:
-  - build
-  - essential
+  - build-essential
   - libncurses5-dev
   - gawk
   - git
