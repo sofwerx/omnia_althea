@@ -1,0 +1,6 @@
+.git
+*.retry
+*.txt
+secrets/*
+build/
+scripts/virtualbox/vboxDisks/*

@@ -3,7 +3,12 @@
 
 - block:
     - name: Download files required for build
-      shell: "cd {{source_dir}}; make -j{{ansible_processor_vcpus|int}} download"
+      shell: "cd {{source_dir}}; make -j1 V=s download"
+      register: download_result
+      ignore_errors: true
+
+    - name: Build world verbosely
+      shell: "cd {{source_dir}}; make -j1 V=s world"
       register: download_result
       ignore_errors: true
 

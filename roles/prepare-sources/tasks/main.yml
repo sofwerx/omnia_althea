@@ -20,5 +20,5 @@
   with_items: "{{rust_targets}}"
   ignore_errors: true
 
-- name: Update Rust
-  shell: "{{ansible_env.HOME}}/.cargo/bin/rustup default nightly; {{ansible_env.HOME}}/.cargo/bin/rustup update"
+#- name: Update Rust
+  # shell: "{{ansible_env.HOME}}/.cargo/bin/rustup default nightly; {{ansible_env.HOME}}/.cargo/bin/rustup update"
