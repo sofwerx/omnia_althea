@@ -17,6 +17,7 @@ Open the router and at the front of the router between the LEDs and the brightne
 from left to right they are: GND, RX, TX, and power. Connect GND, RX, and TX to the black, white and green wires respectively. 
 
 USB Cable | Omnia
+--- | ---
 GND (black) | GND
 RX (white) | RX
 TX (green) | TX
