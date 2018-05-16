@@ -13,6 +13,9 @@ saveenv
 ```
 
 ### To connect to serial:
+
+![alt text](https://github.com/sofwerx/omnia_althea/blob/master/images/20180516_141814.jpg "Pinout of Omnia router")
+
 Open the router and at the front of the router between the LEDs and the brightness light there are four pins.
 from left to right they are: GND, RX, TX, and power. Connect GND, RX, and TX to the black, white and green wires respectively. 
 
