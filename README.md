@@ -8,7 +8,7 @@ See "Recovery from Brick" section for commands.
 Plug in a flash drive with a copy of the built medkit tarball on it. Then press and hold the reset button on the back panel while booting and wait for 4 LEDs to light up regardless of color. This will put the router into flash mode. Once the router has powered on, ssh into it
 as root. A banner saying ALTHEA MESH will appear and you will be logged in to the router. 
 
-On a computer give the firmware to the router through scp:
+On a computer give the firmware to the router through scp, assuming you are in the same directory as the firmware:
 ```
 scp <firmware> root@192.168.1.1:/tmp/<firmware>
 ```
