@@ -18,6 +18,8 @@ Once the router has the firmware enter this command on the router:
 sysupgrade -v -n /tmp/<firmware>
 ```
 
+The router will kill the ssh session and if you are viewing the logs on serial you will be able to watch the flash take place.
+
 ## Recovery from Brick
 Use TTL to USB to enter the U-Boot kernel and reset the router to its default environment.
 Use commands
