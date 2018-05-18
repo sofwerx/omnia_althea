@@ -5,6 +5,7 @@ package_id: mipsel_24kc
 image_name: "mt7621"
 extension: tar
 
+<<<<<<< HEAD
 babeld_interfaces:
   - eth1
   - eth2
@@ -15,6 +16,17 @@ gateway_interfaces:
 extender_interfaces:
   - eth1
   - eth2
+=======
+listen_interfaces_client:
+  - eth1
+  - eth2
+
+listen_interfaces_gateway:
+  - eth2
+
+lan_interfaces:
+  - eth0
+>>>>>>> 6fa302ffbc193f5e837aa3f1d0b51197fb97227a
 
 wifi_mesh: false
 

@@ -36,59 +36,38 @@ config device 'lan_dev'
 # pointless, #TODO figure out how to generalize
 # or just admit defeat and hardcode
 {% if gateway %}
-{% for interface in gateway_interfaces %}
-config interface 'babel_{{interface | replace(".","")}}'
+{% for interface in listen_interfaces_gateway %}
+config interface 'rita_{{interface | replace(".","")}}'
         option ifname {{interface}}
         option proto static
-        option ip6addr fde6::1
 {% endfor %}
-config device 'babeld_eth02_dev'
+config device 'ritad_eth02_dev'
         option name 'eth0.2'
         option macaddr '78:8a:20:bb:7e:4f'
-config device 'babeld_eth03_dev'
+config device 'ritad_eth03_dev'
         option name 'eth0.3'
         option macaddr '78:8a:20:bb:7e:50'
-config device 'babeld_eth04_dev'
-        option name 'eth0.4'
-        option macaddr '78:8a:20:bb:7e:51'
-
-{% elif extender %}
-{% for interface in extender_interfaces %}
-config interface 'babel_{{interface | replace(".","")}}'
-        option ifname {{interface}}
-        option proto static
-        option ip6addr fde6::1
-{% endfor %}
-config device 'babeld_eth01_dev'
-        option name 'eth0.1'
-        option macaddr '78:8a:20:bb:7e:4e'
-config device 'babeld_eth02_dev'
-        option name 'eth0.2'
-        option macaddr '78:8a:20:bb:7e:4f'
-config device 'babeld_eth03_dev'
-        option name 'eth0.3'
-        option macaddr '78:8a:20:bb:7e:50'
-config device 'babeld_eth04_dev'
+config device 'ritad_eth04_dev'
         option name 'eth0.4'
         option macaddr '78:8a:20:bb:7e:51'
 
 {% else %}
-{% for interface in babeld_interfaces %}
-config interface 'babel_{{interface | replace(".","")}}'
+{% for interface in listen_interfaces_client %}
+config interface 'rita_{{interface | replace(".","")}}'
         option ifname {{interface}}
         option proto static
         option ip6addr fde6::1
 {% endfor %}
-config device 'babeld_eth01_dev'
+config device 'ritad_eth01_dev'
         option name 'eth0.1'
         option macaddr '78:8a:20:bb:7e:4e'
-config device 'babeld_eth02_dev'
+config device 'ritad_eth02_dev'
         option name 'eth0.2'
         option macaddr '78:8a:20:bb:7e:4f'
-config device 'babeld_eth03_dev'
+config device 'ritad_eth03_dev'
         option name 'eth0.3'
         option macaddr '78:8a:20:bb:7e:50'
-config device 'babeld_eth04_dev'
+config device 'ritad_eth04_dev'
         option name 'eth0.4'
         option macaddr '78:8a:20:bb:7e:51'
 
@@ -124,6 +103,7 @@ config switch_vlan
         option device 'switch0'
         option vlan '5'
         option ports '4 6t'
+<<<<<<< HEAD
 
 config 'route' 'defaultOverWg'
         option 'interface' 'wgExit'
@@ -166,3 +146,5 @@ config wireguard_wgBridge
         option endpoint_port '{{gateway_port}}'
         option persistent_keepalive '25'
 {% endif %}
+=======
+>>>>>>> 6fa302ffbc193f5e837aa3f1d0b51197fb97227a

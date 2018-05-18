@@ -29,6 +29,7 @@ config interface 'backhaul6'
 {% endif %}
 
 {% if gateway %}
+<<<<<<< HEAD
 {% for interface in gateway_interfaces %}
 config interface 'babel_{{interface | replace(".","")}}'
         option ifname {{interface}}
@@ -92,3 +93,17 @@ config wireguard_wgBridge
         option endpoint_port '{{gateway_port}}'
         option persistent_keepalive '25'
 {% endif %}
+=======
+{% for interface in listen_interfaces_gateway %}
+config interface 'rita_{{interface | replace(".","")}}'
+        option ifname {{interface}}
+        option proto static
+{% endfor %}
+{% else %}
+{% for interface in listen_interfaces_client %}
+config interface 'rita_{{interface | replace(".","")}}'
+        option ifname {{interface}}
+        option proto static
+{% endfor %}
+{% endif %}
+>>>>>>> 6fa302ffbc193f5e837aa3f1d0b51197fb97227a

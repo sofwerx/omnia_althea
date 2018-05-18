@@ -1,6 +1,6 @@
-conf_to_build: n600
+conf_to_build: tplinkc7v2
 target: "ar71xx"
-device: "mynet-n600"
+device: "archer-c7-v2"
 package_id: mips_24kc
 image_name: generic
 extension: bin
@@ -9,25 +9,25 @@ private_radio:
  - radio1
 
 # 5ghz note only 20mhz channel widths
-mesh_channel: 165
+mesh_channel: 36
 
-private_channel: 1
-private_5g_channel: 165
+private_channel: 11
+private_5g_channel: 36
 
 listen_interfaces_client:
-  - eth1
-  - eth0.4
+  - eth0.1
+  - eth1.2
   - "{%if wifi_mesh %}wlan1{%endif%}"
 
 listen_interfaces_gateway:
   - wlan0
   - wlan1
-  - eth0.4
-  - eth0.3
-  - eth0.2
+  - eth1.2
+  - eth1.3
+  - eth1.4
 
 lan_interfaces:
-  - eth0.1
+  - eth1.5
 
 wifi_mesh: false
 

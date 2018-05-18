@@ -1,0 +1,39 @@
+[payment]
+pay_threshold = "0"
+close_threshold = "-1000000000"
+close_fraction = "100"
+buffer_period = 3
+eth_address = "0x0101010101010101010101010101010101010101"
+
+[network]
+own_ip = "0.0.0.0"
+bounty_ip = "fd96::1337:0e1f"
+babel_port = 6872
+rita_hello_port = 4876
+rita_dashboard_port = 4877
+bounty_port = 8888
+wg_private_key = ""
+wg_private_key_path = "/tmp/priv"
+wg_public_key = ""
+wg_start_port = 60000
+{% if gateway %}
+peer_interfaces = [{% for interface in listen_interfaces_gateway %}"{{interface}}"{{ "," if not loop.last else "" }}{% endfor %}]
+{% elif extender %}
+peer_interfaces = [{% for interface in listen_interfaces_extender %}"{{interface}}"{{ "," if not loop.last else "" }}{% endfor %}]
+{% else %}
+peer_interfaces = [{% for interface in listen_interfaces_client %}"{{interface}}"{{ "," if not loop.last else "" }}{% endfor %}]
+{% endif %}
+manual_peers = ["{{exit_server_address}}"]
+global_non_mesh_ip = ""
+conf_link_local = true
+default_route = []
+
+[exit_client]
+exit_ip = "{{exit_internal_ip}}"
+exit_registration_port = 4875
+wg_listen_port = 59999
+
+[exit_client.reg_details]
+
+[exit_tunnel_settings]
+lan_nics = ['lan']

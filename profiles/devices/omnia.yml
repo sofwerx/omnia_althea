@@ -11,21 +11,17 @@ mesh_channel: 36
 private_channel: 11
 private_5g_channel: 36
 
-babeld_interfaces:
+listen_interfaces_client:
   - eth2
 
-gateway_interfaces:
+listen_interfaces_gateway:
   - lan4
   - lan3
   - lan2
   - lan1
 
-extender_interfaces:
-  - eth2
-  - lan4
-  - lan3
-  - lan2
-  - lan1
+lan_interfaces:
+  - lan0
 
 wifi_mesh: false
 

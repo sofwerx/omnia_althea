@@ -7,6 +7,7 @@ extension: bin
 
 mesh_channel: 36
 
+<<<<<<< HEAD
 private_channel: 6
 private_5g_channel: 36
 
@@ -15,6 +16,20 @@ babeld_interfaces:
 
 gateway_interfaces:
   - "{%if wifi_mesh %}wlan1{%endif%}"
+=======
+private_channel: 11
+private_5g_channel: 36
+
+listen_interfaces_client:
+  - eth0
+
+listen_interfaces_gateway: []
+
+lan_interfaces:
+  - wlan0
+  - wlan1
+
+>>>>>>> 6fa302ffbc193f5e837aa3f1d0b51197fb97227a
 
 wifi_mesh: false
 
